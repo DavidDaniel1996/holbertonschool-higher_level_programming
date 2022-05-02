@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-from email import message_from_binary_file
-
-
 def no_c(my_string):
     idx = 0
     new_string = ""
