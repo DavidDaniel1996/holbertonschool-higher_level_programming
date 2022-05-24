@@ -1,0 +1,77 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/file_name.txt
+# python3 -m doctest -v ./tests/file_name.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+==============
+SUCCESS CASES
+==============
+
+Category 1
+==========
+
+Test 1: Base Case
+  ''' Expecting: New List '''
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test 2: Floats in the matrix
+    ''' Expecting: New List '''
+>>> matrix_divided([[1, 25.5, 3.2], [4, 5, 6]], 3)
+[[0.33, 8.5, 1.07], [1.33, 1.67, 2.0]]
+
+Test 3: More than two lists
+    ''' Expecting: New List '''
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Category 2
+==========
+
+Test 1: matrix contains a non int or float
+  ''' Expecting: TypeError '''
+>>> matrix_divided([[1, 'a', 3], [4, 5, 6]], 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 2: rows of the matrix not the same size
+    ''' Expecting: TypeError '''
+>>> matrix_divided([[1, 2, 3], [4, 5]], 3)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+Test 3: div is not an int or float
+    ''' Expecting: TypeError '''
+>>> matrix_divided([[1, 2, 3], [4, 5]], 'a')
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+Test 4: only one list in matrix
+    ''' Expecting: IndexError '''
+>>> matrix_divided([[1, 2, 3]], 3)
+Traceback (most recent call last):
+    ...
+IndexError: list index out of range
+
+Test 5: a NaN in a list
+    ''' Expecting: TypeError '''
+>>> matrix_divided([[1, 2, 3], [4, 5, float("nan")]], 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats

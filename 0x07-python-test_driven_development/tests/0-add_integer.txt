@@ -1,0 +1,114 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/file_name.txt
+# python3 -m doctest -v ./tests/file_name.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> add_integer = __import__('0-add_integer').add_integer
+
+==============
+SUCCESS CASES
+==============
+
+
+Category 1
+==========
+
+Test 1: Two Positive Integers
+  ''' Expecting: 5 '''
+>>> add_integer(2, 3)
+5
+
+Test 2: Adding with a Negative Integer
+  ''' Expecting: 90 '''
+>>> add_integer(-10, 100)
+90
+
+Test 3: Passing only one argument
+  ''' Expecting: 78 '''
+>>> add_integer(-20)
+78
+
+Test 4: Passing floats
+  ''' Expecting: 8 '''
+>>> add_integer(10.0, -2.5)
+8
+
+Test 5: Passing float in argument 1
+  ''' Expecting: 8 '''
+>>> add_integer(-2.5, 10)
+8
+
+Test 6: Passing float in argument 2
+  ''' Expecting: 8 '''
+>>> add_integer(10, -2.5)
+8
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Category 2
+==========
+
+Test 1: Passing one string as argument
+  ''' Expecting: ValueError '''
+>>> add_integer(1, "Hello")
+Traceback (most recent call last):
+  ...
+TypeError: b must be an integer
+
+Test 2: Passing no argument
+  ''' Expecting: ValueError '''
+>>> add_integer()
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test 3: Passing incredibly large number
+  ''' Expecting: OverflowError'''
+>>> add_integer(50, 3e400)
+Traceback (most recent call last):
+  ...
+OverflowError: cannot convert float infinity to integer
+
+Test 4: Passing three arguments
+  ''' Expecting: TypeError'''
+>>> add_integer(2, 4, 6)
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Test 5: Passing one character as argument
+  ''' Expecting: TypeError '''
+>>> add_integer('c', 2)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+Test 6: Passing a list as argument
+  ''' Expecting: TypeError '''
+>>> add_integer([1, 2], 2)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+Test 7: Passing NaN
+  ''' Expecting: TypeError '''
+>>> add_integer(float("nan"), 10)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+Test 8: Passing None
+  ''' Expecting TypeError '''
+>>> add_integer(None)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer

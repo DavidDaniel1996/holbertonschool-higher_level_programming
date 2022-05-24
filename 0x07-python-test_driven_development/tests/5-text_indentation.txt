@@ -1,0 +1,82 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTING WITH the following... '''
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/file_name.txt
+# python3 -m doctest -v ./tests/file_name.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+
+Test 1: Indentation with .
+    ''' Expecting: SUCCESS '''
+>>> text_indentation("Hello. World")
+Hello.
+<BLANKLINE>
+World
+
+Test 2: Indentation with ?
+    ''' Expecting: SUCCESS '''
+>>> text_indentation("Hello? World")
+Hello?
+<BLANKLINE>
+World
+
+Test 3: Indentation with :
+    ''' Expecting: SUCCESS '''
+>>> text_indentation("Hello: World")
+Hello:
+<BLANKLINE>
+World
+
+Test 4: Multiple indentations
+    ''' Expecting: SUCCESS '''
+>>> text_indentation("Hello. World? Testing:")
+Hello.
+<BLANKLINE>
+World?
+<BLANKLINE>
+Testing:
+<BLANKLINE>
+
+Test 5: No space between words
+    ''' Expecting: SUCCESS '''
+>>> text_indentation("Hello.World")
+Hello.
+<BLANKLINE>
+World
+
+Test 6: Special character mid words
+    ''' Expecting: SUCCESS '''
+>>> text_indentation("He.llo")
+He.
+<BLANKLINE>
+llo
+
+Test 7: Two special characters in a row
+    ''' Expecting: SUCCESS '''
+>>> text_indentation("Hello.?World")
+Hello.
+<BLANKLINE>
+?
+<BLANKLINE>
+World
+
+==============
+SUCCESS CASES
+==============
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Test 1: Pass a non string
+    ''' Expecting: '''
+>>> text_indentation(15)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
