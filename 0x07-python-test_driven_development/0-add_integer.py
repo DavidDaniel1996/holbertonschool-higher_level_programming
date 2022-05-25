@@ -4,7 +4,7 @@
 
 def add_integer(a, b=98):
     """Function to return sum of two integers
-        If an argument is not an integer, raises TypeError 
+        If an argument is not an integer, raises TypeError
     """
 
     try:
