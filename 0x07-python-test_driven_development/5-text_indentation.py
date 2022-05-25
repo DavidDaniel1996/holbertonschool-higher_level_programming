@@ -15,5 +15,6 @@ def text_indentation(text):
     for i in special_chars:
         text = text.replace(i, i + '\n')
     text = text.replace('\n ', '\n')
+    text = text.replace(' \n', '\n')
     text = text.replace('\n', '\n\n')
     print(text, end="")
