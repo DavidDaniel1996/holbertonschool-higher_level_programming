@@ -57,5 +57,5 @@ class Rectangle:
         return "".join(my_list)
 
     def __repr__(self):
-        rep = 'Rectangle(' + str(self.width) + ',' + str(self.height) + ')'
+        rep = 'Rectangle(' + str(self.width) + ', ' + str(self.height) + ')'
         return rep
