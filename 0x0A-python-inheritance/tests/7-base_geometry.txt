@@ -52,3 +52,13 @@ Test 2: Value is <= 0
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] age must be greater than 0
+
+Test 3: Value is a float
+    ''' Expecting TypeError '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("age", 5.5)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] age must be an integer
+
