@@ -1,0 +1,54 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/file_name.txt
+# python3 -m doctest -v ./tests/file_name.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+==============
+SUCCESS CASES
+==============
+
+Category 1
+==========
+
+Test 1: Base Case
+  ''' Expecting: SUCCESS '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("age", 15)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Category 2
+==========
+
+Test 1: Value is a string
+    ''' Expecting TypeError '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+Test 2: Value is <= 0
+    ''' Expecting ValueError '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
