@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Module contains function to verify subclass """
+
+
 def inherits_from(obj, a_class):
     """ Check if obj is sub class of a_class """
     result = issubclass(type(obj), a_class)
