@@ -93,7 +93,7 @@ Test 6: Passing 1 argument
     ''' Expecting: TypeError '''
 >>> bg = BaseGeometry()
 >>> try:
-...     bg.integer_validator(15)
+...     bg.integer_validator("h")
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] integer_validator() missing 1 required positional argument: 'value'
