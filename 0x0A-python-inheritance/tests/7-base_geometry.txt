@@ -44,7 +44,7 @@ Test 1: Value is a string
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] name must be an integer
 
-Test 2: Value is <= 0
+Test 2: Value is 0
     ''' Expecting ValueError '''
 >>> bg = BaseGeometry()
 >>> try:
@@ -62,3 +62,11 @@ Test 3: Value is a float
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] age must be an integer
 
+Test 4: Negative number
+  ''' Expecting: TypeError '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("result", -15)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] result must be greater than 0
