@@ -124,3 +124,12 @@ Test 9: Three arguments
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] integer_validator() takes 3 positional arguments but 4 were given
+
+Test 10: Pass tuple
+    ''' Expecting: '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("width", (2, ))
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] width must be an integer
