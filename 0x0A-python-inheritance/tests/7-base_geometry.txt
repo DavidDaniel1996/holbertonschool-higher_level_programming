@@ -106,3 +106,12 @@ Test 7: No argument
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test 8: Huge number
+    ''' Expecting: TypeError '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator("age", 3e400)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] age must be an integer
