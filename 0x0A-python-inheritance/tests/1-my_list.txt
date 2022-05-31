@@ -82,7 +82,7 @@ Test 7: Passing floats
 [2, 2.5, 3]
 
 Test 3: Incredibly large number
-  ''' Expecting: OverflowError '''
+  ''' Expecting: SUCCESS '''
 >>> my_list = MyList()
 >>> my_list.append(2)
 >>> my_list.append(3e400)
@@ -114,6 +114,17 @@ Test 2: Passing a character
 >>> my_list.append(1)
 >>> my_list.append("C")
 >>> my_list.append(2)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+Test 3: Passing number as string
+  ''' Expecting: TypeError '''
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append("2")
+>>> my_list.append(3)
 >>> my_list.print_sorted()
 Traceback (most recent call last):
     ...
