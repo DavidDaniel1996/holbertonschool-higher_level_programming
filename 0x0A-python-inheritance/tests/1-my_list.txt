@@ -129,3 +129,13 @@ Test 3: Passing number as string
 Traceback (most recent call last):
     ...
 TypeError: '<' not supported between instances of 'str' and 'int'
+
+Test 4: Passing a list
+  ''' Expecting: TypeError ''' 
+>>> my_list.append(1)
+>>> my_list.append((2, 3))
+>>> my_list.append(4)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: '<' not supported between instances of 'str' and 'int'
