@@ -72,6 +72,15 @@ Test 6: Passing negative integers
 >>> my_list.print_sorted()
 [-3, 3, 5]
 
+Test 7: Passing floats
+  ''' Expecting: SUCCESS '''
+>>> my_list = MyList()
+>>> my_list.append(2.5)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[2, 2.5, 3]
+
 ==========================
 CASES THAT SHOULD NOT WORK
 ==========================
