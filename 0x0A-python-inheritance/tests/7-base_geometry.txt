@@ -79,3 +79,12 @@ Test 5: Call to area()
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [Exception] area() is not implemented
+
+Test 6: Passing 1 argument
+    ''' Expecting: '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.integer_validator(15)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] integer_validator() missing 1 required positional argument: 'value'
