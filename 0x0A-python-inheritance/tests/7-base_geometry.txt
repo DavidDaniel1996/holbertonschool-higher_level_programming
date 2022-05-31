@@ -70,3 +70,12 @@ Test 4: Negative number
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] result must be greater than 0
+
+Test 5: Call to area()
+    ''' Expecting: Exception '''
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[Exception] area() is not implemented
