@@ -35,3 +35,13 @@ class TestRectangle(unittest.TestCase):
         self.assertAlmostEqual(rect1.height, 30)
         self.assertAlmostEqual(rect1.x, 4)
         self.assertAlmostEqual(rect1.y, 6)
+        with self.assertRaises(TypeError):
+            rect1.width = "hello"
+            rect1.height = 4.9
+            rect1.x = (2)
+            rect1.y = [3]
+        with self.assertRaises(ValueError):
+            rect1.width = 0
+            rect1.height = -1
+            rect1.x = -1
+            rect1.y = -5
