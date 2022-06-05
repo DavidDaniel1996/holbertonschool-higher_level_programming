@@ -45,3 +45,8 @@ class TestRectangle(unittest.TestCase):
             rect1.height = -1
             rect1.x = -1
             rect1.y = -5
+
+    def test_area(self):
+        rect1 = Rectangle(10, 15, 2, 3, 25)
+        my_area = rect1.area()
+        self.assertAlmostEqual(my_area, 150)
