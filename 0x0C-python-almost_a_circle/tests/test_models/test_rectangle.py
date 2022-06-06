@@ -54,15 +54,15 @@ class TestRectangle(unittest.TestCase):
         self.assertAlmostEqual(my_area, 150)
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
-    def assert_display(self, expected_output, w, h, mock_stdout):
-        rect1 = Rectangle(w, h)
+    def assert_display(self, expected_output, w, h, x, y, mock_stdout):
+        rect1 = Rectangle(w, h, x, y)
         rect1.display()
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def test_display(self):
-        self.assert_display("##\n##\n", 2, 2)
-        self.assert_display("#\n", 1, 1)
-        self.assert_display("###\n###\n", 3, 2)
+        self.assert_display("\n ##\n ##\n", 2, 2, 1, 1)
+        self.assert_display("#\n", 1, 1, 0, 0)
+        self.assert_display("  ###\n  ###\n", 3, 2, 2, 0)
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_str(self, expected_output, w, h, x, y, id, mock_stdout):
