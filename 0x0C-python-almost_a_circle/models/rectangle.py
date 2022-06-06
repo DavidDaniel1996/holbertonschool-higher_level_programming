@@ -78,12 +78,18 @@ class Rectangle(Base):
         """ prints # based on width and height,
         and whitespace based on x and y
         """
-        print("\n" * self.y, end="")
+        print("\n" * self.__y, end="")
         for i in range(self.__height):
-            print(" " * self.x, end="")
+            print(" " * self.__x, end="")
             print("#" * self.__width)
 
     def __str__(self):
         """ returns attributes of rectangle in string format """
         s = "[Rectangle] ("
         return f"{s}{self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def update(self, *args):
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        values = args
+        for i in range(len(args)):
+            setattr(self, attributes[i], values[i])
