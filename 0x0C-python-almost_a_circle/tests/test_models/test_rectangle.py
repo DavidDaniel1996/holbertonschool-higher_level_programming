@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """ Unittesting for Rectangle """
 
+import io
 import unittest
+import unittest.mock
 import sys
 
 h = 'holbertonschool-higher_level_programming/0x0C-python-almost_a_circle'
@@ -50,3 +52,14 @@ class TestRectangle(unittest.TestCase):
         rect1 = Rectangle(10, 15, 2, 3, 25)
         my_area = rect1.area()
         self.assertAlmostEqual(my_area, 150)
+
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_stdout(self, expected_output, w, h, x, y, mock_stdout):
+        rect1 = Rectangle(w, h)
+        rect1.display()
+        self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+    def test_display(self):
+        self.assert_stdout("##\n##\n", 2, 2, 0, 0)
+        self.assert_stdout("#\n", 1, 1, 0, 0)
+        self.assert_stdout("###\n###\n", 3, 2, 0, 0)
