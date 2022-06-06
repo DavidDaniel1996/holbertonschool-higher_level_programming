@@ -75,8 +75,12 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
-        """ prints # based on width and height """
+        """ prints # based on width and height,
+        and whitespace based on x and y
+        """
+        print("\n" * self.y, end="")
         for i in range(self.__height):
+            print(" " * self.x, end="")
             print("#" * self.__width)
 
     def __str__(self):
