@@ -73,3 +73,18 @@ class TestRectangle(unittest.TestCase):
     def test_str(self):
         self.assert_str("[Rectangle] (12) 2/1 - 4/6\n", 4, 6, 2, 1, 12)
         self.assert_str("[Rectangle] (1) 0/0 - 5/5\n", 5, 5, 0, 0, 1)
+
+    def test_update(self):
+        rect1 = Rectangle(10, 15, 2, 3, 25)
+        rect1.update(30)
+        self.assertAlmostEqual(rect1.id, 30)
+        rect1.update(35, 11, 16)
+        self.assertAlmostEqual(rect1.id, 35)
+        self.assertAlmostEqual(rect1.width, 11)
+        self.assertAlmostEqual(rect1.height, 16)
+        rect1.update(40, 12, 17, 4, 6)
+        self.assertAlmostEqual(rect1.id, 40)
+        self.assertAlmostEqual(rect1.width, 12)
+        self.assertAlmostEqual(rect1.height, 17)
+        self.assertAlmostEqual(rect1.x, 4)
+        self.assertAlmostEqual(rect1.y, 6)
