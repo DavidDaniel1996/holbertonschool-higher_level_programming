@@ -60,3 +60,14 @@ class TestSquare(unittest.TestCase):
         s1.update(10, x=16)
         self.assertAlmostEqual(s1.id, 10)
         self.assertAlmostEqual(s1.x, 13)
+
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_dictionary(self, expected_output, s, x, y, id, mock_stdout):
+        sq1 = Square(s, x, y, id)
+        dict1 = sq1.to_dictionary()
+        print(dict1)
+        self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+    def test_to_dictionary(self):
+        expected_output = "{'id': 1, 'x': 2, 'size': 10, 'y': 1}\n"
+        self.assert_dictionary(expected_output, 10, 2, 1, 1)
