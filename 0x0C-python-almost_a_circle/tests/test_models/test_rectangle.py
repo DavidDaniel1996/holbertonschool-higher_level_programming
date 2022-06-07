@@ -90,3 +90,14 @@ class TestRectangle(unittest.TestCase):
         rect1.update(10, width=20)
         self.assertAlmostEqual(rect1.id, 10)
         self.assertAlmostEqual(rect1.width, 10)
+
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def assert_dictionary(self, expected_output, w, h, x, y, id, mock_stdout):
+        rect1 = Rectangle(w, h, x, y, id)
+        dict1 = rect1.to_dictionary()
+        print(dict1)
+        self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+    def test_to_dictionary(self):
+        expected_output = "{'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}\n"
+        self.assert_dictionary(expected_output, 10, 2, 1, 9, 1)
