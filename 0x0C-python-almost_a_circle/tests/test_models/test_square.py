@@ -2,6 +2,7 @@
 """ Unittesting for Rectangle """
 
 import io
+from re import S
 import unittest
 import unittest.mock
 import sys
@@ -43,3 +44,19 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             s1.size = 0
             s1.size = -5
+
+    def test_update(self):
+        s1 = Square(20, 25, 2, 3)
+        s1.update(30)
+        self.assertAlmostEqual(s1.id, 30)
+        s1.update(40, 50, 4, 6)
+        self.assertAlmostEqual(s1.id, 40)
+        self.assertAlmostEqual(s1.size, 50)
+        self.assertAlmostEqual(s1.x, 4)
+        self.assertAlmostEqual(s1.y, 6)
+        s1.update(x=13, y=14)
+        self.assertAlmostEqual(s1.x, 13)
+        self.assertAlmostEqual(s1.y, 14)
+        s1.update(10, x=16)
+        self.assertAlmostEqual(s1.id, 10)
+        self.assertAlmostEqual(s1.x, 13)
