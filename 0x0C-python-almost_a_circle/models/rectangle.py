@@ -103,6 +103,6 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ returns dictionary representation """
         pd1 = {'x': self.x, 'y': self.y, 'id': self.id}
-        pd2 = {'width': self.width, 'height': self.height}
+        pd2 = {'height': self.height, 'width': self.width}
         pd1.update(pd2)
         return pd1
