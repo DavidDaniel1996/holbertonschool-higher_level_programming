@@ -25,7 +25,6 @@ class TestBase(unittest.TestCase):
         self.assertAlmostEqual(new_base3._Base__nb_objects, 2)
         self.assertAlmostEqual(new_base3.id, 10)
 
-
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_json(self, expected_output, w, h, x, y, mock_stdout):
         rect1 = Rectangle(w, h, x, y)
@@ -35,4 +34,5 @@ class TestBase(unittest.TestCase):
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def test_to_json_string(self):
-        self.assert_json('{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}\n', 10, 7, 2, 8)
+        e_o = '{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}\n'
+        self.assert_json(e_o, 10, 7, 2, 8)
