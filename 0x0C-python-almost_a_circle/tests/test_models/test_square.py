@@ -29,3 +29,17 @@ class TestSquare(unittest.TestCase):
     def test_str(self):
         self.assert_str("[Square] (12) 2/1 - 10\n", 10, 2, 1, 12)
         self.assert_str("[Square] (1) 0/0 - 5\n", 5, 0, 0, 1)
+
+    def test_getting_setting(self):
+        s1 = Square(20, 2, 3, 25)
+        self.assertAlmostEqual(s1.size, 20)
+        s1.size = 10
+        self.assertAlmostEqual(s1.size, 10)
+        with self.assertRaises(TypeError):
+            s1.size = "hello"
+            s1.size = 2.5
+            s1.size = (1)
+            s1.size = [3]
+        with self.assertRaises(ValueError):
+            s1.size = 0
+            s1.size = -5
