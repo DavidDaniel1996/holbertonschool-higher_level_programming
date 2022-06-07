@@ -99,5 +99,5 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def test_to_dictionary(self):
-        expected_output = "{'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}\n"
-        self.assert_dictionary(expected_output, 10, 2, 1, 9, 1)
+        e_o = "{'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}\n"
+        self.assert_dictionary(e_o, 10, 2, 1, 9, 1)
