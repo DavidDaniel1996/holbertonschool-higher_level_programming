@@ -99,3 +99,10 @@ class Rectangle(Base):
             attributes = ['id', 'width', 'height', 'x', 'y']
             for attributes in kwargs:
                 setattr(self, attributes, kwargs[attributes])
+
+    def to_dictionary(self):
+        """ returns dictionary representation """
+        pd1 = {'x': self.x, 'y': self.y, 'id': self.id}
+        pd2 = {'width': self.width, 'height': self.height}
+        pd1.update(pd2)
+        return pd1
