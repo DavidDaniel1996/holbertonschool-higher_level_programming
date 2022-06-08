@@ -28,11 +28,13 @@ class Base():
         """ saves json representation of a list of objects to a file """
         json_rep = cls.to_json_string([])
         dictionary = []
-        for i in list_objs:
-            dict_rep = i.to_dictionary()
-            dictionary += [dict_rep]
-
-        class_name = type(list_objs[0]).__name__
+        if list_objs is not None:
+            for i in list_objs:
+                dict_rep = i.to_dictionary()
+                dictionary += [dict_rep]
+            class_name = type(list_objs[0]).__name__
+        else:
+            class_name = type(list_objs).__name__
         filename = f"{class_name}.json"
         with open(filename, 'w', encoding="utf=8") as f:
             json.dump(dictionary, f)
