@@ -78,3 +78,6 @@ class TestSquare(unittest.TestCase):
         """ unittest dictionary """
         expected_output = "{'id': 1, 'x': 2, 'size': 10, 'y': 1}\n"
         self.assert_dictionary(expected_output, 10, 2, 1, 1)
+
+if __name__ == '__main__':
+    unittest.main()

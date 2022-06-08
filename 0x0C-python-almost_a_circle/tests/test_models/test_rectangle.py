@@ -111,3 +111,6 @@ class TestRectangle(unittest.TestCase):
         """ unittest dictionary """
         e_o = "{'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}\n"
         self.assert_dictionary(e_o, 10, 2, 1, 9, 1)
+
+if __name__ == '__main__':
+    unittest.main()

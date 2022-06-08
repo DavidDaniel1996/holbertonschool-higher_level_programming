@@ -41,3 +41,6 @@ class TestBase(unittest.TestCase):
         self.assert_json(e_o, dictionary)
         self.assert_json("[]\n", None)
         self.assert_json("[]\n", {})
+
+if __name__ == '__main__':
+    unittest.main()
