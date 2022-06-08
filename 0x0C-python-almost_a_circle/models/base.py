@@ -38,3 +38,10 @@ class Base():
         filename = f"{class_name}.json"
         with open(filename, 'w', encoding="utf=8") as f:
             json.dump(dictionary, f)
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
