@@ -26,6 +26,7 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
         """ saves json representation of a list of objects to a file """
+        json_rep = cls.to_json_string([])
         dictionary = []
         for i in list_objs:
             dict_rep = i.to_dictionary()
