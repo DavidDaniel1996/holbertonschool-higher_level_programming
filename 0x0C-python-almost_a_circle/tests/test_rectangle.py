@@ -26,7 +26,7 @@ class TestRectangle(unittest.TestCase):
         self.assertAlmostEqual(rect2.height, 15)
         self.assertAlmostEqual(rect2.x, 0)
         self.assertAlmostEqual(rect2.y, 0)
-        self.assertAlmostEqual(rect2.id, 1)
+        self.assertAlmostEqual(rect2.id, 2)
 
     def test_getting_setting(self):
         """ unittest getting and setting """
