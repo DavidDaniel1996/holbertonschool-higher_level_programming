@@ -6,10 +6,8 @@ import unittest
 import unittest.mock
 import sys
 
-h = 'holbertonschool-higher_level_programming/0x0C-python-almost_a_circle'
-sys.path.insert(0, f'/home/david/projects/{h}/models')
-Base = __import__('base').Base
-Rectangle = __import__('rectangle').Rectangle
+from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
@@ -37,7 +35,7 @@ class TestBase(unittest.TestCase):
         """ json test """
         rect1 = Rectangle(10, 7, 2, 8)
         dictionary = rect1.to_dictionary()
-        e_o = '{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}\n'
+        e_o = '{"x": 2, "y": 8, "id": 3, "height": 7, "width": 10}\n'
         self.assert_json(e_o, dictionary)
         self.assert_json("[]\n", None)
         self.assert_json("[]\n", {})

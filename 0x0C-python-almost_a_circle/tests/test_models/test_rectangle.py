@@ -6,9 +6,7 @@ import unittest
 import unittest.mock
 import sys
 
-h = 'holbertonschool-higher_level_programming/0x0C-python-almost_a_circle'
-sys.path.insert(0, f'/home/david/projects/{h}/models')
-Rectangle = __import__('rectangle').Rectangle
+from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
