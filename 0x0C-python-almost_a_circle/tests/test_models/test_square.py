@@ -2,10 +2,8 @@
 """ Unittesting for Rectangle """
 
 import io
-from re import S
 import unittest
 import unittest.mock
-import sys
 
 from models.square import Square
 

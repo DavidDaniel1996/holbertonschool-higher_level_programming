@@ -4,7 +4,6 @@
 import io
 import unittest
 import unittest.mock
-import sys
 
 from models.rectangle import Rectangle
 
