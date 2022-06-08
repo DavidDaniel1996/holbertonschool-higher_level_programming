@@ -41,7 +41,15 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
+        """ returns list of json string """
         if json_string is None or len(json_string) == 0:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ returns instance with all attributes set """
+        Dummy = cls(1, 1, 1, 1)
+        Dummy.update(**dictionary)
+        return Dummy
