@@ -27,15 +27,17 @@ class TestBase(unittest.TestCase):
         self.assertAlmostEqual(new_base3.id, 10)
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
-    def assert_json(self, expected_output, w, h, x, y, mock_stdout):
+    def assert_json(self, expected_output, dictionary, mock_stdout):
         """ json test setup """
-        rect1 = Rectangle(w, h, x, y)
-        dictionary = rect1.to_dictionary()
         json_dictionary = Base.to_json_string(dictionary)
         print(json_dictionary)
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def test_to_json_string(self):
         """ json test """
+        rect1 = Rectangle(10, 7, 2, 8)
+        dictionary = rect1.to_dictionary()
         e_o = '{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}\n'
-        self.assert_json(e_o, 10, 7, 2, 8)
+        self.assert_json(e_o, dictionary)
+        self.assert_json("[]\n", None)
+        self.assert_json("[]\n", {})
