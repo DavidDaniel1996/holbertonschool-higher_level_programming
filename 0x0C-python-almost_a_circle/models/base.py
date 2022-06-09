@@ -61,5 +61,5 @@ class Base():
                 json_rep = cls.from_json_string(read_data)
                 list_instances = [cls.create(**o) for o in json_rep]
                 return list_instances
-        except Exception:
+        except FileNotFoundError:
             return "[]"
