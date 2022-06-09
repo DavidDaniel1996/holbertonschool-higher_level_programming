@@ -2,7 +2,6 @@
 """ Module contains Base class """
 
 import json
-from pathlib import Path
 
 
 class Base():
@@ -56,12 +55,11 @@ class Base():
     @classmethod
     def load_from_file(cls):
         filename = cls.__name__ + ".json"
-        file = Path(filename)
-        if file.is_file():
+        try:
             with open(filename, 'r') as jsonfile:
                 read_data = jsonfile.read()
                 json_rep = cls.from_json_string(read_data)
                 list_instances = [cls.create(**o) for o in json_rep]
                 return list_instances
-        else:
+        except Exception:
             return "[]"
