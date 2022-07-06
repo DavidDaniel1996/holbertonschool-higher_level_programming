@@ -1,0 +1,30 @@
+-- Script creates table 'second_table' in hbtn_0c_0, adds multiple rows
+-- Query to create second_table
+CREATE TABLE IF NOT EXISTS second_table(
+    id INT,
+    name VARCHAR(256),
+    score INT
+);
+-- Query that adds multiple records
+INSERT INTO second_table(id, name, score)
+VALUES
+    (
+        1,
+        "John",
+        10
+    ),
+    (
+        2,
+        "Alex",
+        3
+    ),
+    (
+        3,
+        "Bob",
+        14
+    ),
+    (
+        4,
+        "George",
+        8
+    );
