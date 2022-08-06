@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module to print Mysql table"""
+""" Module to print Mysql table """
 
 import MySQLdb
 import sys
