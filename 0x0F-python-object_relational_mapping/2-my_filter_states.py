@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module to print rows with Arizona as name"""
+"""Module to print rows with specific name"""
 
 if __name__ == '__main__':
     import MySQLdb
@@ -11,4 +11,6 @@ if __name__ == '__main__':
 
     cur.execute("SELECT * FROM states WHERE name = '{}'".format(sys.argv[4]))
     result = cur.fetchall()
-    print(result)
+
+    for row in result:
+        print(row)
