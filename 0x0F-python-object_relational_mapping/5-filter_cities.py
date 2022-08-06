@@ -25,6 +25,8 @@ if __name__ == '__main__':
 
     result = cur.fetchall()
 
+    if not result:
+        print()
     for i, cities in enumerate(result):
         if i == len(result) - 1:
             print("{}".format(str(cities[0])))
