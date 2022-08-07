@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists State objects"""
+"""Changes state id=2 to New Mexico"""
 
 import sys
 from model_state import Base, State
