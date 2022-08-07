@@ -16,12 +16,15 @@ if __name__ == "__main__":
     result = session.query(State).all()
     char_match = set('a')
 
+    match = False
     for row in result:
         i = 0
         while i < len(row.name):
             if row.name[i] in char_match:
                 session.delete(row)
+                match = True
                 break
             i += 1
 
-    session.commit()
+    if match is True:
+        session.commit()
