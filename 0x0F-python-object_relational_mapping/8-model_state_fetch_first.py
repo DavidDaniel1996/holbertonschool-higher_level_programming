@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists State objects"""
+"""Lists first State Object"""
 
 import sys
 from model_state import Base, State
@@ -16,6 +16,6 @@ if __name__ == "__main__":
     result = session.query(State).first()
 
     if not result:
-        print()
+        print('Nothing')
     else:
         print(f"{result.id}: {result.name}")
