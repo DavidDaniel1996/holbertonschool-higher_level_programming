@@ -13,7 +13,7 @@ if __name__ == "__main__":
         .format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Sess = sessionmaker(bind=engine)
     session = Sess()
-    result = session.query(State).where(State.name.contains('Y'))
+    result = session.query(State).where(State.name.contains('a'))
 
     for row in result:
         session.delete(row)
