@@ -21,7 +21,6 @@ if __name__ == "__main__":
         while i < len(row.name):
             if row.name[i] in char_match:
                 session.delete(row)
+                session.commit()
                 break
             i += 1
-
-    session.commit()
