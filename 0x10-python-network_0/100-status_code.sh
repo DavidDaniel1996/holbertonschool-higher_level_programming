@@ -1,4 +1,3 @@
 #!/bin/bash
 # Display status code of response
-curl -sI "$1" | grep HTTP | cut -d " " -f 2
- 
+curl -s -o /dev/null -w "%{http_code}\n" "$1"
