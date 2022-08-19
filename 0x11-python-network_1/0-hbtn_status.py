@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """ Module that fetches a url """
+
 import urllib.request
 
-request = urllib.request.Request('https://intranet.hbtn.io/status')
-with urllib.request.urlopen(request) as f:
+with urllib.request.urlopen('https://intranet.hbtn.io/status') as f:
     body = f.read()
     print('Body Response:')
-    print(f"\t- type: {type(body)}")
-    print(f"\t- content: {body}")
-    print(f"\t- utf content: {body.decode('utf-8')}")
+    print("\t- type: {}".format(type(body)))
+    print("\t- content: {}".format(body))
+    print("\t- utf content: {}".format(body.decode('utf-8')))
 
 if __name__ == '__main__':
     pass
