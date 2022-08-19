@@ -9,4 +9,4 @@ if __name__ == "__main__":
         print("Body Response:")
         print("\t- type: {}".format(type(body)))
         print("\t- content: {}".format(body))
-        print("\t- utf content: {}".format(body.decode("utf-8")))
+        print("\t- utf8 content: {}".format(body.decode("utf-8")))
