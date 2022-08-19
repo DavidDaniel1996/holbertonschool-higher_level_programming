@@ -3,7 +3,8 @@
 
 import urllib.request
 
-with urllib.request.urlopen('https://intranet.hbtn.io/status') as f:
+request = urllib.request.Request('https://intranet.hbtn.io/status')
+with urllib.request.urlopen(request) as f:
     body = f.read()
     print('Body Response:')
     print(f"\t- type: {type(body)}")
