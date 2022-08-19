@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Sends POST request"""
-import requests
+"""Sends a POST request to a given URL with a given email."""
 import sys
+import requests
 
 
 if __name__ == "__main__":
