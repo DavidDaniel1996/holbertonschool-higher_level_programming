@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Sends a POST request to a given URL with a given email."""
-import sys
+""" Sends POST request """
+
 import requests
+import sys
 
+if __name__ == '__main__':
 
-if __name__ == "__main__":
-    url = sys.argv[1]
-    email = {"email": sys.argv[2]}
+    email = {'email': sys.argv[2]}
 
-    r = requests.post(url, data=email)
-    print(r.text)
+    response = requests.post(sys.argv[1], data=email)
+    print(response.text)
