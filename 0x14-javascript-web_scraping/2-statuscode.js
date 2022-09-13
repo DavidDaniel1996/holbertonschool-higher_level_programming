@@ -7,7 +7,8 @@ function statusCode (response) {
   console.log(`code: ${code}`);
 }
 
-function printError () {
-  console.log('code: 404');
+function printError (error) {
+    const code = error.response.status
+    console.log(`code: ${code}`)
 }
 axios.get(process.argv[2]).then(statusCode).catch(printError);
