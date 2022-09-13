@@ -6,7 +6,7 @@ function readData (data) {
   try {
     console.log(data);
   } catch (err) {
-    console.log(err);
+    console.log(JSON.stringify(err, ['message', 'arguments', 'type', 'name']));
   }
 }
 
