@@ -2,11 +2,11 @@
 
 const fs = require('fs');
 
-function readData (data) {
-  try {
+function readData (err, data) {
+  if (err) {
+    console.log(err);
+  } else {
     console.log(data);
-  } catch (err) {
-    console.log(JSON.stringify(err, ['message', 'arguments', 'type', 'name']));
   }
 }
 
