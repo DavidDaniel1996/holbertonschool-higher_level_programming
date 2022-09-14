@@ -18,4 +18,7 @@ axios.get(url).then(function (response) {
     }
   }
   console.log(tasksCompleted);
+}).catch(err => {
+  console.log(err);
+  return (err);
 });
