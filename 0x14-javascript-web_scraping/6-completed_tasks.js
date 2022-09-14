@@ -8,9 +8,9 @@ axios.get(url).then(function (response) {
   let userID = 0;
   let count = 0;
   for (let i = 0; i < response.data.length; i++) {
-    if (userID !== response.data[i].userId) {
+    userID = response.data[i].userId;
+    if (!(userID in tasksCompleted)) {
       count = 0;
-      userID = response.data[i].userId;
     }
     if (response.data[i].completed === true) {
       count++;
