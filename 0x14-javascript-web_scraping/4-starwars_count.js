@@ -5,7 +5,7 @@ const starWars = process.argv[2];
 let counter = 0;
 
 axios.get(starWars).then(function (response) {
-  for (let i = 0; i < response.data.count; i++) {
+  for (let i = 0; i < response.data.results.length; i++) {
     for (let j = 1; j < response.data.results[i].characters.length; j++) {
       if (response.data.results[i].characters[j].includes('18')) {
         counter++;
@@ -13,7 +13,4 @@ axios.get(starWars).then(function (response) {
     }
   }
   console.log(counter);
-}).catch(err => {
-  console.log(err);
-  return(err);
 });
