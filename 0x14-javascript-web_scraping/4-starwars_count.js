@@ -13,4 +13,7 @@ axios.get(starWars).then(function (response) {
     }
   }
   return (counter);
-}).then(console.log);
+}).then(console.log).catch(err => {
+    console.log(err);
+    return(err);
+});
